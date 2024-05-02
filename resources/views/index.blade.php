@@ -20,6 +20,8 @@
 <body>
     <div class="container mt-5">
         <h2>Laravel Captcha Code Example</h2>
+
+        {{-- error log start--}}
         @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -27,8 +29,11 @@
                 <li>{{ $error }}</li>
                 @endforeach
             </ul>
-        </div><br />
+        </div>
+        <br/>
         @endif
+        {{-- error log end--}}
+
         <form method="post" action="{{url('captcha-validation')}}">
             @csrf
             <div class="form-group">
